@@ -1,0 +1,97 @@
+body {
+    background-color: #F3ECE2;
+}
+
+div#app {
+    position: relative;
+    color: white;
+    background-color:#BFDECF;
+    max-width:1000px;
+    border-radius: 15px;
+    margin:30px auto;
+    padding: 10px;
+    box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+    
+}
+div#app > h2 {
+    max-width: 150px;
+    font-size: 32px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 10px auto;
+}
+div#app > div#messages > div.card {
+    position:relative;
+    font-family: 'Roboto Condensed', sans-serif;
+    display:block;
+    margin: 10px;
+    height: 80px;
+    max-height: 120px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+div#app > div#messages > div.card > div.user {
+    position: absolute;
+    background-color:skyblue;
+    bottom:0;
+    right:0;
+    left: 0;
+    height:30px;
+    max-height: 45px;
+    
+}
+div#app > div#messages > div.card > div.text {
+    position: relative;
+    top: 30%;
+    margin-left: 10px;
+    transform: translateY(-50%);
+    border-style:none;
+    font-size: 18pt;
+    text-overflow:ellipsis;
+}
+div#app > div#messages > div.card > div.user > div.name {
+    margin: 5px 10px 15px 10px;
+    font-size: 14pt;
+    color:azure;
+        
+}
+
+div#app > footer > input#textbox {
+    display: inline-block;
+    box-sizing:border-box;
+    
+    margin-right:10px;
+    margin-left: 10px;
+    margin-top: 20px;
+    height: 40px;
+    max-height: 55px;
+
+    width: 800px;
+    max-width: 1000px;
+    font-size:18pt;
+    padding-left:10px;
+        padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    
+    
+}
+div#app > footer > div#button {
+    display: inline-block;
+
+    max-width: 100px;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12pt;
+    margin-left: 25px;
+    height: 30px;
+    max-height: 45px;
+    padding-top: 10px;
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border-style: solid;
+    border-color: white;
+
+}
