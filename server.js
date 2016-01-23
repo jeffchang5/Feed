@@ -11,15 +11,18 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var jade = require('jade');
+var database = require('./config/database')
 
 
-var config = require('./config/database.js');
+var config = require('./passport/passport.js')(passport);
+var flash = require('connect-flash');
+
+app.use(flash());
 
 // configuration ===============================================================
-mongoose.connect(config.url); // connect to our database
+mongoose.connect(database.url); // connect to our database
 
-// require('./config/passport')(passport); // pass passport for configuration
-
+require('./passport/passport')(passport); // pass passport for configuration
 
 
 app.use(morgan('dev')); // log every request to the console
@@ -45,4 +48,7 @@ require('./app/routes')(app, passport); // load our routes and pass in our app a
 
 // launch ======================================================================
 app.listen(port);
+process.nextTick(function() {
+console.log(mongoose.connection.readyState);
+});
 console.log('The magic happens on port ' + port);

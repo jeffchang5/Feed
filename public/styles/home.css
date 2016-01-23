@@ -14,6 +14,7 @@ div#app {
     
 }
 div#app > h2 {
+    position:relative
     max-width: 150px;
     font-size: 32px;
     font-family: 'Roboto Condensed', sans-serif;
@@ -50,6 +51,7 @@ div#app > div#messages > div.card > div.text {
     text-overflow:ellipsis;
 }
 div#app > div#messages > div.card > div.user > div.name {
+    position:relative;
     margin: 5px 10px 15px 10px;
     font-size: 14pt;
     color:azure;
@@ -57,6 +59,7 @@ div#app > div#messages > div.card > div.user > div.name {
 }
 
 div#app > footer > input#textbox {
+    position: relative;
     display: inline-block;
     box-sizing:border-box;
     
@@ -69,29 +72,90 @@ div#app > footer > input#textbox {
     width: 800px;
     max-width: 1000px;
     font-size:18pt;
-    padding-left:10px;
-        padding-top: 10px;
-    padding-bottom: 10px;
+    padding:10px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
     
     
 }
-div#app > footer > div#button {
+button {
+    border-style: solid;
+    border-width: medium;
+    border-color: white;
     display: inline-block;
-
-    max-width: 100px;
+    background-color: inherit;
+    color: white;
+    width: 110px;
+    max-width: 130px;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 12pt;
+    height: 40px;
+    max-height: 55px;
     margin-left: 25px;
-    height: 30px;
-    max-height: 45px;
-    padding-top: 10px;
+    height: 40px;
+    padding: 15px;
+    
+}
 
-    padding-left: 30px;
-    padding-right: 30px;
+div#register {
+    position: relative;
+    color: black;
+    
+    width:300px;
+    margin:40px auto;
+}
+div#register > button {
+    color:salmon;
+    padding:15px;
+    border-color: salmon;
+    padding-bottom: 10px;
+    height: 60px;
+    max-height: 60px;
+}
+form {
 
-    border-style: solid;
-    border-color: white;
+    font-family: 'Roboto Condensed', sans-serif;
 
+    height: 300px;
+    max-height: 1000px;
+    background-color: white;
+    color: black;
+    width:400px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    margin: -15% auto;
+    padding: 30px;
+}
+div#form_text input{
+    width: 90%;
+    height:40px;
+    margin-bottom: 30px;
+}
+form button{
+    color:black;
+    padding:15px;
+    border-color: black;
+    border-width: 1px;
+    padding-bottom: 10px;
+    height: 50px;
+    max-height: 60px;
+    width:110px;
+    display: block;
+    margin: 0 auto;
+}
+#dialog {
+    width:500px;
+    position: fixed;
+    background-color:#D4A16A;
+    padding:20px;
+    color:white;
+    font-family: 'Roboto Condensed';
+
+    z-index:200;
+    margin: 2% auto;
+    left: 0;
+    right: 0;
+    bottom:50px;
+    border-radius: 15px;
+
+    
 }
