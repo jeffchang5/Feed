@@ -6,6 +6,7 @@ function loginCard (event) {
             console.log('register');
             var register = document.createElement('form');
             register.setAttribute("method", "POST");
+            register.setAttribute("id", "form");
             register.action = '/api/register';
             register.innerHTML = '<div id = "form_text">Full Name:<br><input type="text" name="username" <br>Password:<br><input type="password" name="password"></div><button type ="submit">Register</button>';
             register.style.visibility='visible';
@@ -14,10 +15,12 @@ function loginCard (event) {
             
             
         }
+
         else {
             var login = document.createElement('form');
             login.action = '/api/login';
             login.setAttribute("method", "POST");
+            login.setAttribute("id", "form");
             login.innerHTML = '<div id = "form_text">Full Name:<br><input type="text" name="username" <br>Password:<br><input type="password" name="password"></div><button type ="submit" >Login</button>';
             login.style.visibility='visible';
             doc.appendChild(login);

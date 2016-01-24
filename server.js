@@ -29,7 +29,7 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'jade'); 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded( {
     extended:true

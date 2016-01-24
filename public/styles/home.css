@@ -104,7 +104,7 @@ div#register {
     width:300px;
     margin:40px auto;
 }
-div#register > button {
+div#register button {
     color:salmon;
     padding:15px;
     border-color: salmon;
@@ -112,7 +112,7 @@ div#register > button {
     height: 60px;
     max-height: 60px;
 }
-form {
+form#form {
 
     font-family: 'Roboto Condensed', sans-serif;
 
@@ -149,7 +149,7 @@ form button{
     padding:20px;
     color:white;
     font-family: 'Roboto Condensed';
-
+    
     z-index:200;
     margin: 2% auto;
     left: 0;

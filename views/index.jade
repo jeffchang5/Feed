@@ -5,27 +5,33 @@ html(lang='eng')
     link(rel='stylesheet', type='text/css', href='styles/home.css')
     link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed', rel='stylesheet', type='text/css')
   body
+    
+    -if(user)
+        #dialog Logged in as #{user}
+        script(src='js/fadeout.js', type='text/javascript')
     -if(message.length)
         #dialog #{message}
         script(src='js/fadeout.js', type='text/javascript')
-
     #app
       h2 Feed App
       #messages
-        .card
-          .text afsfasdfdfsadfsdfsafdf
-          .user
-            .name changjef
+
       // Creates the button
-      footer
-        input#textbox(type='text', placeholder='Enter your message.')
-        button#button(onclick='newCard()')
-          #text
-            | SUBMIT
-    div#register
-        button(onclick="loginCard('login')")  Login
-        button(onclick="loginCard('register')")  Register
+      -if(user)
+          footer
+            input#textbox(type='text', placeholder='Enter your message.')
+            button#button(onclick='newCard("#{user}")')
+              #text
+                | SUBMIT
+    -if(!user)
+        div#register
+            button(onclick="loginCard('login')")  Login
+            button(onclick="loginCard('register')")  Register
+    -if(user) 
+        div#register
+            form(action = "/api/logout", method = "get")
+                button(type="submit") Logout
+                
     script(src='js/new_card.js', type='text/javascript')
     script(src='js/login_card.js', type='text/javascript')
-    script(src='js/login.js', type='text/javascript')
     script(src='js/register.js', type='text/javascript')
