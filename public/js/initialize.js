@@ -12,11 +12,14 @@ function load() {
     }
     xhttp.open('POST','/api/fetch');
     xhttp.send();
+    var messages = document.getElementById("messages");
+    while (messages.firstChild) {
+        messages.removeChild(messages.firstChild);
+        console.log('hi');
+    }
     
 };
-var messages = document.getElementById("messages");
-while (messages.firstChild) {
-    messages.removeChild(myNode.firstChild);
-}
+
+
 load();
 setInterval(load, 2000);
