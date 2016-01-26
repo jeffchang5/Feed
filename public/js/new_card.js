@@ -3,7 +3,7 @@ function newCard(user) {
     var textbox = document.getElementById('textbox');
     var text = textbox.value;
     XMLHttpGetCard(user, text);
-    updateCard(user, text);
+    load();
     var messages = document.getElementById('messages');
     messages.removeChild(messages.firstElementChild);
     textbox.value='';
@@ -21,6 +21,11 @@ function XMLHttpGetCard(user, text) {
 
 }
 function updateCard(user, text) {
+    var myNode = document.getElementById('messages');
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
+
     var messages = document.getElementById('messages');
     var card = document.createElement('div');
     card.classList.add('card');
