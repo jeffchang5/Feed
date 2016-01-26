@@ -1,8 +1,4 @@
 function load() {
-    var messages = document.getElementById("messages");
-    while (messages.firstChild) {
-        messages.removeChild(myNode.firstChild);
-    }
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
