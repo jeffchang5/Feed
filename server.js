@@ -19,15 +19,14 @@ var flash = require('connect-flash');
 
 app.use(flash());
 
-// configuration ===============================================================
-mongoose.connect(database.url); // connect to our database
 
-require('./passport/passport')(passport); // pass passport for configuration
+mongoose.connect(database.url);
 
+require('./passport/passport')(passport); 
 
-app.use(morgan('dev')); // log every request to the console
-app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser.json()); // get information from html forms
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser.json()); 
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade'); 
 app.use(express.static('public'));
@@ -40,13 +39,12 @@ app.use(bodyParser.urlencoded( {
 // required for passport
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }))
 app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(passport.session());
+app.use(flash());
 
-// routes ======================================================================
 require('./app/routes')(app, passport); // load our routes and pass in our app and fully configured passport
 
-// launch ======================================================================
+
 app.listen(port);
 process.nextTick(function() {
 console.log(mongoose.connection.readyState);

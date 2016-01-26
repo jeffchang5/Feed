@@ -1,19 +1,17 @@
 // app/routes.js
 module.exports = function(app, passport) {
-
-    // =====================================
-    // HOME PAGE (with login links) ========
-    // =====================================
+    var card = require('./cardMongo.js');
+    card.init();
     app.get('/', function(req, res) {
         if (req.isAuthenticated()) {
             res.render('index', {
                 message: req.flash('message'),
                 user: req.user.local.username
-                })
+                });
         }
             
         else {
-            console.log(req.flash('messae'));
+  
             res.render('index',{
                 message: req.flash('message')
             });
@@ -37,7 +35,11 @@ module.exports = function(app, passport) {
         req.logout();
         res.redirect('/');
     });
-    app.get('/api/json', function(req, res) {
+    app.post('/api/update', function(req, res) {
+        card.update(req.body)
+    });
+    app.post('/api/fetch', function(req, res) {
+        card.update(req.body)
         
     });    
 };

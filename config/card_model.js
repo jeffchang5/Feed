@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 var cardSchema = mongoose.Schema({
-    local            : {
+    cards            : {
         username     : String,
-        password     : String
+        message     : String
 }});
 
 module.exports = mongoose.model('Card', cardSchema);

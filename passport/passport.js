@@ -38,7 +38,6 @@ module.exports = function(passport) {
                     return done(null, false, req.flash('message', 'Username is already taken.'));
                 }
                 else {
-
                     var newUser = new User();
                     newUser.local.username = username;
                     newUser.local.password = newUser.generateHash(password);
