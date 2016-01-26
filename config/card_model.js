@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var cardSchema = mongoose.Schema({
     cards            : {
         username     : String,
-        message     : String
+        messag     : String
 }});
 
 module.exports = mongoose.model('Card', cardSchema);
