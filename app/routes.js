@@ -1,7 +1,6 @@
 // app/routes.js
 module.exports = function(app, passport) {
     var card = require('./cardMongo.js');
-    card.init();
     app.get('/', function(req, res) {
         if (req.isAuthenticated()) {
             res.render('index', {
@@ -39,7 +38,9 @@ module.exports = function(app, passport) {
         card.update(req.body)
     });
     app.post('/api/fetch', function(req, res) {
-        card.update(req.body)
-        
+        console.log("I'm trying");
+        card.init(function(err, data) {
+            res.send(data);
+        });
     });    
 };

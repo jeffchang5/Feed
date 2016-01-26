@@ -1,10 +1,11 @@
 
 var Model = require('../config/card_model');
 var Cards = function () {};
-Cards.prototype.init = function () {
-    Model.find().sort({$natural: -1}).limit(5).exec(function(err, documents) {
-        console.log(documents);
-        
+Cards.prototype.init = function (callback) {
+    
+    Model.find().sort({$natural: -1}).limit(8).lean().exec(function(err, documents) {
+        callback(null, documents);
+    
     });
     
 };
