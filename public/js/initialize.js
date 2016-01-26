@@ -14,5 +14,5 @@ function load() {
     xhttp.send();
     
 };
-
+load();
 setInterval(load(), 1000);
