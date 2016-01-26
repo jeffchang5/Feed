@@ -15,4 +15,4 @@ function load() {
     
 };
 load();
-setInterval(load(), 1000);
+setInterval(load, 1000);
