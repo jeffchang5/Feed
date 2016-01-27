@@ -38,7 +38,6 @@ module.exports = function(app, passport) {
         card.update(req.body)
     });
     app.post('/api/fetch', function(req, res) {
-        console.log("I'm trying");
         card.init(function(err, data) {
             res.send(data);
         });

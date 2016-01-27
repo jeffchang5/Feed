@@ -2,10 +2,11 @@
 function newCard(user) {
     var textbox = document.getElementById('textbox');
     var text = textbox.value;
+    console.log(text);
     XMLHttpGetCard(user, text);
-    updateCard(user, text);
+
     var messages = document.getElementById('messages');
-    messages.removeChild(messages.firstElementChild);
+
     textbox.value='';
 
 }
@@ -17,6 +18,7 @@ function XMLHttpGetCard(user, text) {
     var xhttp = new XMLHttpRequest();
     xhttp.open('POST','/api/update');
     xhttp.setRequestHeader('Content-Type', 'application/json');
+
     xhttp.send(JSON.stringify({message: user, username: text}));
 
 }

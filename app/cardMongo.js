@@ -3,7 +3,7 @@ var Model = require('../config/card_model');
 var Cards = function () {};
 Cards.prototype.init = function (callback) {
     
-    Model.find().sort({$natural: -1}).limit(8).lean().exec(function(err, documents) {
+    Model.find().limit(8).sort({'$natural': -1}).lean().exec(function(err, documents) {
         callback(null, documents);
     
     });
